@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.twitter',
     'allauth.socialaccount.providers.facebook',
     'allauth.socialaccount.providers.google',
+    'crispy_forms',
     'django_extensions',
 
     # Local
@@ -73,6 +74,10 @@ AUTHENTICATION_BACKENDS = (
 
 ROOT_URLCONF = 'core.urls'
 AUTH_USER_MODEL = 'users.CustomUser'
+
+# django-crispy-forms
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
 
 # sites framework
 SITE_ID = 1
