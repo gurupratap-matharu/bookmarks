@@ -54,6 +54,7 @@ INSTALLED_APPS = [
 
     # Local
     'users.apps.UsersConfig',
+    'pages.apps.PagesConfig',
 ]
 
 MIDDLEWARE = [
@@ -197,8 +198,8 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
-LOGIN_REDIRECT_URL = 'home'
-ACCOUNT_LOGOUT_REDIRECT = 'home'
+LOGIN_REDIRECT_URL = 'pages:home'
+ACCOUNT_LOGOUT_REDIRECT = 'pages:home'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 DEFAULT_FROM_EMAIL = 'admin@market.com'

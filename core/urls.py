@@ -24,4 +24,9 @@ urlpatterns = [
 
     # User management
     path('accounts/', include('allauth.urls')),
+
+    # Local
+    path('', include('pages.urls')),
+    path('profile/', include('users.urls')),
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
