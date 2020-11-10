@@ -17,7 +17,7 @@ class CustomUserChangeForm(UserChangeForm):
         fields = ('email', 'username')
 
 
-class ProfileEditForm(forms.Form):
+class ProfileUpdateForm(forms.Form):
     class Meta:
         model = Profile
         fields = ('date_of_birth', 'photo')
