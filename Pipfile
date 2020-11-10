@@ -13,6 +13,7 @@ psycopg2-binary = "*"
 dj-database-url = "*"
 whitenoise = "*"
 django-crispy-forms = "*"
+pillow = "==8.0.1"
 
 [requires]
 python_version = "3.8"
