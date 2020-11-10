@@ -9,15 +9,13 @@ from .forms import CustomUserChangeForm, CustomUserCreationForm
 CustomUser = get_user_model()
 
 
-class ProfileInLine(admin.TabularInline):
-    model = Profile
-
-
 class ProfileAdmin(admin.ModelAdmin):
     model = Profile
+    list_display = ['user', 'date_of_birth', 'photo']
 
 
-admin.site.register(Profile, ProfileAdmin)
+class ProfileInLine(admin.TabularInline):
+    model = Profile
 
 
 class CustomUserAdmin(UserAdmin):
@@ -28,4 +26,5 @@ class CustomUserAdmin(UserAdmin):
     list_display = ['email', 'username', ]
 
 
+admin.site.register(Profile, ProfileAdmin)
 admin.site.register(CustomUser, CustomUserAdmin)
