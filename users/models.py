@@ -26,6 +26,9 @@ class Profile(models.Model):
     def get_absolute_url(self):
         return reverse('profile_detail', args=[str(self.id)])
 
+    def get_update_url(self):
+        return reverse('profile_update', args=[str(self.id)])
+
 
 @receiver(post_save, sender=get_user_model())
 def create_user_profile(sender, instance, created, **kwargs):

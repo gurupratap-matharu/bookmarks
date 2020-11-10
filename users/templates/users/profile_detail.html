@@ -5,14 +5,29 @@
 {% block content %}
 <div class="row justify-content-center mt-5">
     <div class="col-12 col-md-6 col-lg-4 col-xl-3">
-        <div class="card rounded">
+        <div class="card">
+            {% if profile.photo %}
+            <img class="card-img-top" src="{{ profile.photo.url }}" alt="Card image cap">
+            {% endif %}
             <div class="card-body">
-                <h2 class="card-title">{{ request.user }}</h2>
-                <form method="POST">
-                    {% csrf_token %}
-                    {{ form|crispy }}
-                    <button class="btn btn-success" type="submit">Log In</button>
-                </form>
+                <h5 class="card-title">{{ request.user }}</h5>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                <p class="card-text">
+                    <i class="fa fa-map" aria-hidden="true"></i>
+                    {{ profile.location }}
+                </p>
+                <p class="card-text">
+                    <i class="fa fa-calendar-alt" aria-hidden="true"></i>
+                    {{ profile.date_of_birth }}
+                </p>
+                <p class="card-text">
+                    <i class="fa fa-chalkboard" aria-hidden="true"></i>
+                    {{ profile.bio }}
+                </p>
+            </div>
+            <div class="card-footer bg-white border-top-0">
+                <a href="{% url 'pages:home' %}" class="btn btn-light">Cancel</a>
+                <a href="{{ profile.get_update_url }}" class="btn btn-success">Edit</a>
             </div>
         </div>
     </div>

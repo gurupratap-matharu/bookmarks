@@ -1,4 +1,5 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.messages.views import SuccessMessageMixin
 from django.urls import reverse_lazy
 from django.views.generic import DetailView, UpdateView
 
@@ -12,7 +13,8 @@ class ProfileDetailView(LoginRequiredMixin, DetailView):
     context_object_name = 'profile'
 
 
-class ProfileUpdate(LoginRequiredMixin, UpdateView):
-    form_class = ProfileUpdateForm
-    success_url = reverse_lazy('home')
-    template_name = 'users/profile_.html'
+class ProfileUpdate(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
+    model = Profile
+    fields = ['bio', 'location', 'date_of_birth', 'photo']
+    template_name = 'users/profile_update_form.html'
+    success_message = 'Profile updated successfully!'
