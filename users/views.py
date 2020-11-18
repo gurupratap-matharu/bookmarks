@@ -1,9 +1,7 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.messages.views import SuccessMessageMixin
-from django.urls import reverse_lazy
 from django.views.generic import DetailView, UpdateView
 
-from users.forms import ProfileUpdateForm
 from users.models import Profile
 
 
