@@ -6,6 +6,10 @@ __pycache__
 db.sqlite3
 media
 
+# cert
+cert.crt
+cert.key
+
 # Backup files #
 *.bak
 
