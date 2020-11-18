@@ -14,6 +14,8 @@ dj-database-url = "*"
 whitenoise = "*"
 django-crispy-forms = "*"
 pillow = "==8.0.1"
+werkzeug = "*"
+pyopenssl = "*"
 
 [requires]
 python_version = "3.8"
