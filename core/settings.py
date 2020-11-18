@@ -28,7 +28,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', default='Secretkey')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = int(os.environ.get('DEBUG', default=1))
 
-ALLOWED_HOSTS = ['mysite.com', 'localhost', '0.0.0.0', '127.0.0.1', 'testserver']
+ALLOWED_HOSTS = ['192.168.100.59', 'mysite.com', 'localhost', '0.0.0.0', '127.0.0.1', 'testserver']
 
 
 # Application definition
