@@ -98,6 +98,7 @@ ACCOUNT_USERNAME_REQUIRED = False
 SOCIALACCOUNT_PROVIDERS = {
     'facebook': {
         'METHOD': 'oauth2',
+        'SDK_URL': '//connect.facebook.net/{locale}/sdk.js',
         'SCOPE': ['email', 'public_profile', 'user_friends'],
         'AUTH_PARAMS': {'auth_type': 'reauthenticate'},
         'INIT_PARAMS': {'cookie': True},
@@ -115,7 +116,7 @@ SOCIALACCOUNT_PROVIDERS = {
             'updated_time',
         ],
         'EXCHANGE_TOKEN': True,
-        'LOCALE_FUNC': 'path.to.callable',
+        'LOCALE_FUNC': lambda request: 'en_US',
         'VERIFIED_EMAIL': False,
         'VERSION': 'v2.12',
     },

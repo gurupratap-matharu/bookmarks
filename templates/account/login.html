@@ -1,4 +1,6 @@
 {% extends '_base.html' %}
+{% load socialaccount %}
+{% providers_media_js %}
 {% load crispy_forms_tags %}
 {% block title %}Log In{% endblock title %}
 
@@ -7,12 +9,21 @@
     <div class="col-12 col-md-6 col-lg-4 col-xl-3">
         <div class="card rounded">
             <div class="card-body">
-                <h2 class="card-title">Log In</h2>
+                <h2 class="card-title text-center">Log In</h2>
                 <form method="POST">
                     {% csrf_token %}
                     {{ form|crispy }}
                     <button class="btn btn-success" type="submit">Log In</button>
                 </form>
+            </div>
+            <div class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <a>Connect a Facebook
+                        account</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="">Connect a Twitter account</a>
+                </li>
             </div>
         </div>
     </div>
