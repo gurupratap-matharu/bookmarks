@@ -16,6 +16,7 @@ django-crispy-forms = "*"
 pillow = "==8.0.1"
 werkzeug = "*"
 pyopenssl = "*"
+certifi = "*"
 
 [requires]
 python_version = "3.8"
