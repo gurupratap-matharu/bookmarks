@@ -28,6 +28,7 @@ urlpatterns = [
     # Local
     path('', include('pages.urls')),
     path('profile/', include('users.urls')),
+    path('images/', include('images.urls', namespace='images')),
 
 ]
 
