@@ -1,0 +1,22 @@
+{% extends '_base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Bookmark an image{% endblock title %}
+
+{% block content %}
+<div class="container">
+    <p class="display-4">Bookmark an image</p>
+    <div class="card rounded">
+        <img src="{{ request.GET.url }}" alt="image-preview" class="card-img-top">
+        <div class="card-body">
+            <form action="" method="post">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <div class="d-flex justify-content-end">
+                    <button type="submit" class="btn btn-success">Bookmark it!</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}

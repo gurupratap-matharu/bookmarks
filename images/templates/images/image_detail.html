@@ -1,0 +1,17 @@
+{% extends '_base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Bookmark an image{% endblock title %}
+
+{% block content %}
+<div class="container">
+    <p class="display-4">{{ image.title }}</p>
+    <div class="card rounded">
+        <img src="{{ image.url }}" alt="image-preview" class="card-img-top">
+        <div class="card-body">
+            <div class="card-title">{{ image.title }}</div>
+            <div class="card-text">{{ image.description }}</div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
