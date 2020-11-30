@@ -198,27 +198,16 @@ LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
     'formatters': {
-        'simple': {
-            'format': '%(levelname)s %(message)s'
-        },
+        'simple': {'format': '%(levelname)s %(message)s'},
     },
     'handlers': {
-        'console': {
-            'level': 'DEBUG',
-            'class': 'logging.StreamHandler',
-            'formatter': 'simple'
-        },
-    },
-    'root': {
-        'handlers': ['console'],
-        'level': 'INFO',
+        'console': {'level': 'DEBUG', 'class': 'logging.StreamHandler', 'formatter': 'simple'}
     },
     'loggers': {
-        'core': {
-            'handlers': ['console'],
-            'level': 'DEBUG',
-            'propagate': True,
-        },
+        'core': {'handlers': ['console'], 'level': 'DEBUG', 'propagate': True},
+        'images': {'handlers': ['console'], 'level': 'DEBUG', 'propagate': True},
+        'pages': {'handlers': ['console'], 'level': 'DEBUG', 'propagate': True},
+        'users': {'handlers': ['console'], 'level': 'DEBUG', 'propagate': True},
     },
 }
 
