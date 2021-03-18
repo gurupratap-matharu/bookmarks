@@ -13,6 +13,9 @@ cert.key
 # Backup files #
 *.bak
 
+# MacOS
+.DS_Store
+
 # If you are using PyCharm #
 .idea/**/workspace.xml
 .idea/**/tasks.xml
