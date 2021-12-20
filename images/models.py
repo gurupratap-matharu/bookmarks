@@ -1,3 +1,5 @@
+import uuid
+
 from django.conf import settings
 from django.db import models
 from django.urls import reverse
@@ -5,12 +7,19 @@ from django.utils.text import slugify
 
 
 class Image(models.Model):
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='images_created')
-    users_like = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='images_liked', blank=True)
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        related_name="images_created",
+    )
+    users_like = models.ManyToManyField(
+        settings.AUTH_USER_MODEL, related_name="images_liked", blank=True
+    )
     title = models.CharField(max_length=200)
     slug = models.SlugField(max_length=200, blank=True)
     url = models.URLField()
-    image = models.ImageField(upload_to='images/%Y/%m/%d/')
+    image = models.ImageField(upload_to="images/%Y/%m/%d/")
     description = models.TextField(blank=True)
     created = models.DateField(auto_now_add=True, db_index=True)
 
@@ -23,4 +32,4 @@ class Image(models.Model):
         super().save(*args, **kwargs)
 
     def get_absolute_url(self):
-        return reverse('images:image_detail', args=[self.slug])
+        return reverse("images:image_detail", args=[self.slug])
