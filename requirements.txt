@@ -1,5 +1,6 @@
 bandit
 black
+certifi
 django
 django-extensions
 django-allauth
@@ -10,4 +11,4 @@ whitenoise
 django-crispy-forms
 pillow
 werkzeug
-# pyopenssl 
+pyOpenSSL
