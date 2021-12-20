@@ -1,22 +1,13 @@
-[[source]]
-name = "pypi"
-url = "https://pypi.org/simple"
-verify_ssl = true
-
-[dev-packages]
-
-[packages]
-django = "*"
-django-extensions = "*"
-django-allauth = "*"
-psycopg2-binary = "*"
-dj-database-url = "*"
-whitenoise = "*"
-django-crispy-forms = "*"
-pillow = "==8.0.1"
-werkzeug = "*"
-pyopenssl = "*"
-certifi = "*"
-
-[requires]
-python_version = "3.8"
+bandit
+black
+django
+django-extensions
+django-allauth
+dj-database-url
+flake8
+psycopg2-binary
+whitenoise
+django-crispy-forms
+pillow
+werkzeug
+# pyopenssl 
